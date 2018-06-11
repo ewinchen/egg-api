@@ -1,3 +1,18 @@
 {
-  "extends": "eslint-config-egg"
+  "extends": "eslint-config-egg",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules": {
+    "prefer-const": "off",
+    "comma-dangle": "off",
+    "no-trailing-spaces": "off",
+    "strict": "off",
+    "object-shorthand": "off",
+    "eol-last": "off",
+    "semi": "warn",
+    "no-unused-vars": "warn"
+  }
 }
