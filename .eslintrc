@@ -9,10 +9,11 @@
     "prefer-const": "off",
     "comma-dangle": "off",
     "no-trailing-spaces": "off",
-    "strict": "off",
+    "strict": "warn",
     "object-shorthand": "off",
     "eol-last": "off",
     "semi": "warn",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "array-bracket-spacing": "off"
   }
 }

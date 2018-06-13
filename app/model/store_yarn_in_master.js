@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = app => {
   const { STRING, INTEGER, DATE, BOOLEAN, DECIMAL } = app.Sequelize;
 
@@ -5,7 +7,7 @@ module.exports = app => {
     InMasterID: { type: INTEGER, primaryKey: true, autoIncrement: true, allowNull: false },
     InMasterNo: STRING(50),
     CredenceNo: STRING(50),
-    InDate: DATE,
+    InDate: STRING(25),
     InTypeID: INTEGER,
     StoreNameID: INTEGER,
     OwnerID: INTEGER,

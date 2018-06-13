@@ -1,3 +1,5 @@
+'use strict';
+
 const { Controller } = require('egg');
 const camelCase = require('camelcase');
 
@@ -43,7 +45,13 @@ class RestController extends Controller {
     entity = camelCase(entity, { pascalCase: true });
     let id = this.ctx.params.id;
     let body = this.ctx.request.body;
-    const result = await this.ctx.model[entity].update(body, { where: { [this.ctx.model[entity].primaryKeyField]: id } });
+    // const result = await this.ctx.model[entity].update(body, { where: { [this.ctx.model[entity].primaryKeyField]: id } });
+    // this.ctx.body = result;
+    const instance = await this.ctx.model[entity].findById(id);
+    for (const k of Object.keys(body)) {
+      instance[k] = body[k];
+    }
+    const result = await instance.save();
     this.ctx.body = result;
   }
   /**

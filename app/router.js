@@ -15,4 +15,7 @@ module.exports = app => {
   router.get('/updateby', controller.general.updateBy);
   router.resources('user', '/user', controller.user);
   router.resources('rest', '/rest/:entity', controller.rest);
+
+  router.get('/business/yarn/store_yarn_in/list_master', controller.business.yarn.storeYarnIn.listMaster);
+  router.get('/business/yarn/store_yarn_in/show_whole/:id', controller.business.yarn.storeYarnIn.showWhole);
 };
