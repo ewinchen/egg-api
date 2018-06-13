@@ -3,8 +3,8 @@
 const Service = require('egg').Service;
 
 class StoreYarnInService extends Service {
-  async listMaster() {
-    return await this.ctx.model.StoreYarnInMaster.findAll({ attributes: ['InMasterNo', 'InMasterID'] });
+  async listMaster(offset, limit) {
+    return await this.ctx.model.StoreYarnInMaster.findAll({ attributes: ['InMasterNo', 'InMasterID'], offset, limit });
   }
 
   async showWhole(id) {

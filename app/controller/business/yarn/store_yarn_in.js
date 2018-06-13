@@ -4,7 +4,9 @@ const Controller = require('egg').Controller;
 
 class StoreYarnInController extends Controller {
   async listMaster() {
-    const result = await this.service.business.yarn.storeYarnIn.listMaster();
+    let offset = Number(this.ctx.query.offset) || 0;
+    let limit = Number(this.ctx.query.limit) || 20;
+    const result = await this.service.business.yarn.storeYarnIn.listMaster(offset, limit);
     this.ctx.body = {
       type: true,
       data: result
