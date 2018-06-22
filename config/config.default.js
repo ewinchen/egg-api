@@ -3,7 +3,7 @@
 module.exports = appInfo => {
   const config = exports = {};
 
-  config.env = process.env.EGG_ENV;
+  config.env = process.env.EGG_ENV || 'local';
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1528688407934_740';
@@ -55,6 +55,10 @@ module.exports = appInfo => {
     port: 1433,
     username: 'sa',
     password: 'sa',
+  };
+
+  config.cors = {
+    origin: '*'
   };
 
   return config;

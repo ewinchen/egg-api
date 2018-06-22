@@ -1,9 +1,11 @@
 'use strict';
 
+const BizYarnBase = require('./biz_yarn_base');
+
 module.exports = app => {
   const { STRING, INTEGER, DATE, BOOLEAN, DECIMAL } = app.Sequelize;
 
-  const StoreYarnInMaster = app.model.define('TD_skStoreYarnInMaster', {
+  const BizYarnInMaster = app.model.define('BizYarnInMaster', {
     InMasterID: { type: INTEGER, primaryKey: true, autoIncrement: true, allowNull: false },
     InMasterNo: STRING(50),
     CredenceNo: STRING(50),
@@ -43,7 +45,7 @@ module.exports = app => {
     SyncOrderNo: STRING(50),
     SelectStatus: BOOLEAN,
     SumQty: DECIMAL(18, 2)
-  }, { timestamps: false, freezeTableName: true });
+  }, { tableName: 'TD_skStoreYarnInMaster', timestamps: false, freezeTableName: true });
 
-  return StoreYarnInMaster;
+  return BizYarnInMaster;
 };
